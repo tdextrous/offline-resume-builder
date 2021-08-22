@@ -4,7 +4,8 @@
   "description": "Resume builder offline frontend",
   "main": "index.ts",
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "webpack serve",
+    "build": "webpack --config prod.config.js",
     "test": "jest"
   },
   "author": "Thomas Dexter",

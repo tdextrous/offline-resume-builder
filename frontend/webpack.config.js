@@ -28,17 +28,6 @@ module.exports = {
               sassOptions: {
                 includePaths: ['src/styles'],
               }
-              /*
-              // See https://webpack.js.org/loaders/sass-loader/#function-1
-              additionalData: (content, loaderContext) => {
-                const { resourcePath, relativeContext } = loaderContext;
-                console.log('resPath:', resourcePath);
-                const variablesPath = 'src/styles/_variables.scss';
-                const relativeVarPath = path.relative(resourcePath, variablesPath);
-                let importString = `@import "${relativeVarPath}";`
-                return importString;
-              }
-              */
             }
           }
         ],
@@ -54,14 +43,14 @@ module.exports = {
     hot: true,
     historyApiFallback: true
   },
+  output: {
+    path: path.resolve(__dirname, "dist/"),
+    publicPath: "/",
+    filename: "bundle.js"
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./public/index.html'),
     }), 
   ],
-  output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/",
-    filename: "bundle.js"
-  }
 }

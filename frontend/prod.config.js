@@ -19,7 +19,16 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              additionalData: '@import "_variables.scss";',
+              sassOptions: {
+                includePaths: ['src/styles'],
+              }
+            }
+          }
         ],
       },
     ]
@@ -28,7 +37,7 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build/'),
     publicPath: '/',
     filename: 'bundle.js'
   },

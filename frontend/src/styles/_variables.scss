@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Roboto-Condensed:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
+
+$purple: #5517C2;
+$purple-dark: #2C0275;
+$purple-gray: #685884;
+
+$orange-light: #F7E7D4;
+$orange: #DB8B30;
+$orange-dark: #AD6B1F;
+$orange-darkest: #2B1B08;
+
+$danger: #C32222;
+$danger-light: #F4BEBE;
+$danger-darkest: #2B0808;
+
+$info: #14d2ac;
+$info-light: #d0fbf2;
+$info-dark: #074639;
+
+$white-light: rgba(255,255,255,0.9);
+$button-color: white;
+$gradient: linear-gradient(to bottom right, $purple, $orange);
+
+$gray-light: #f2f2f2;
+$gray-1: #E6E6E6;
+$gray-2: #CCC;
+$gray-3: #8C8C8C;
+$gray-4: #595959;
+$gray-dark: #333;
+$black: #1A1A1A;
+
+$heading-font: 'Poppins', sans-serif;
+$body-font: 'Raleway', sans-serif;
+
+$box-padding: 25px;
+$box-margin: 1.5rem;
+$space-margin: 1rem;
+
+$nav-width: 250px;
+$max-width: 1200px;

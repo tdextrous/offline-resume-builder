@@ -1,0 +1,39 @@
+.card {
+    margin: $space-margin;
+    box-shadow: 0 1px 3px grey;
+    font-family: $body-font;
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+
+
+    max-width: 600px;
+}
+
+.card__content {
+    padding: $box-padding;
+    min-height: 5vh;
+}
+
+.card__button-container {
+    min-width: 200px;
+    position: absolute;
+    top: 0.5 * $box-padding;
+    right: 0.5 * $box-padding;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__bottom-rail {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5 * $box-padding;
+    background-color: $gray-1;
+    box-sizing: border-box;
+    width: 100%;
+
+    & > .button {
+        max-width :300px;
+    }
+}

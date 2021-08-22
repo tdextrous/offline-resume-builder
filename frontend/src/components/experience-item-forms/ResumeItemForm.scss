@@ -1,0 +1,87 @@
+* {
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    padding: $box-padding;
+    cursor: pointer;
+}
+
+.resume-item__form__wrapper {
+    max-width: 800px + 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: $box-margin 0;
+    border: 5px solid white;
+    background-color: $purple;
+    border: 5px solid $purple;
+}
+
+.resume-item__form {
+    display: flex;
+    flex-direction: column;
+    padding: $box-padding;
+    box-shadow: 0 1px 3px grey;
+    font-family: $body-font;
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.text-input__button-group,
+.flex-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 $space-margin 0;
+
+    .text-input {
+        margin: 0;
+    }
+    .form-field {
+      margin: 0;
+      margin-right: 5px;
+      box-sizing: border-box;
+    }
+}
+
+.remove-content {
+    border-radius: 5px;
+    margin: 0 0 0 $space-margin
+}
+
+.select-input {
+    padding: $box-padding;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    box-shadow: inset 0 0px 4px #ccc;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-button,
+.cancel-resume-item__form {
+    border: none;
+    max-width: 150px;
+    padding: $box-padding;
+    background-color: $purple-dark;
+    color: white;
+    cursor: pointer;
+}
+
+.resume-item__form__button-bar {
+    display: flex;
+    padding: $box-padding;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $purple;
+}

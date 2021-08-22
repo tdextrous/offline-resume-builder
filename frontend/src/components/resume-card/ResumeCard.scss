@@ -1,0 +1,92 @@
+.resume-card {
+    width: 100%;
+    max-width: 400px;
+    margin: $box-margin;
+    box-sizing: border-box;
+    position: relative;
+
+    border: 3px solid $gray-1;
+    border-radius: $box-padding;
+    background-color: white;
+
+    font-family: $heading-font;
+    color: $black;
+    z-index: 2;
+}
+
+.resume-card__content {
+
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: $box-padding $box-padding;
+    box-sizing: border-box;
+    position: relative;
+
+    font-family: $body-font;
+}
+
+.resume-card__button-row {
+    padding: 0.25 * $box-padding $box-padding;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: $gray-1;
+    border-radius: 0 0 15px 15px;
+}
+
+.resume-card__title {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.resume-card__detail {
+    color: $gray-dark;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+.button {
+    max-width: 150px;
+    box-sizing: border-box;
+    border: none;
+    background-color: $purple;
+    padding: 0.5 * $box-padding;
+    color: white;
+    border-radius: 5px;
+
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: 0.85rem;
+    position: relative;
+
+    &:hover {
+        background-color: $purple-dark;
+        cursor: pointer;
+    }
+}
+
+.button--inline {
+    margin: 0 $box-margin;
+}
+
+.button--secondary {
+    background-color: transparent;
+    color: $purple;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.button--disabled {
+    background-color: $gray-4;
+    color: $gray-light;
+
+    &:hover {
+        background-color: $gray-4;
+        color: $gray-light;
+        cursor: default;
+    }
+}

@@ -1,0 +1,67 @@
+@import '_variables.scss';
+
+.navbar__container {
+    height: 100vh;
+    width: $nav-width;
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: $purple;
+    color: white;
+    border-radius: 0;
+
+    font-family: $heading-font;
+    font-weight: 500;
+}
+
+.nav__item {
+    height: 50px;
+    padding: 0.25 * $box-padding 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+
+    border-radius: 0;
+    border-left: 5px solid $purple;
+}
+
+.nav__item--selected {
+    border-color: white;
+    background-color: $purple-dark;
+}
+
+.nav__item__icon {
+    width: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.bottom-info {
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid white;
+    border-radius: 0;
+}
+
+.bottom-info__card {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    padding: $box-padding 0.5 * $box-padding;
+
+    &:visited {
+        color: white;
+    }
+}
+
+.bottom-info__card__icon {
+    width: 30px;
+    text-align: center;
+    line-height: 100%;
+    font-size: 0.9rem;
+}

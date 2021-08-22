@@ -1,0 +1,35 @@
+@import '_reset.scss';
+
+.resume-section {
+    border-top: 1px solid grey;
+    margin: 0 auto;
+    padding: $box-padding;
+}
+
+.resume-section__title-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.resume-section__title {
+    margin: 0 $space-margin;
+    font-family: $heading-font;
+}
+
+.resume-item__container {
+    margin: $box-margin;
+    font-family: $body-font;
+}
+
+.resume-section__chevron {
+    padding: 0.5 * $box-padding;
+}
+
+.hidden {
+    display: none;
+}
+
+.is-rotated {
+    transform: rotate(90deg);
+}

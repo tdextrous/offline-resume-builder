@@ -1,0 +1,167 @@
+.experience-selector {
+    min-height: 80vh;
+    margin: 0 0.75 * $box-padding;
+    position: relative;
+    display: flex;
+
+    font-family: $body-font;
+
+    border-radius: 5px;
+    box-shadow: 0 1px 3px grey;
+    overflow: hidden;
+}
+
+.experience-picker__nav {
+    padding: 0.75 * $box-padding;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+
+    display: flex;
+
+    font-family: $heading-font;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+
+    border-bottom: 1px solid $black;
+    border-radius: 0;
+}
+
+.experience-picker__nav-link {
+    margin-top: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.experience-picker__nav-link.active::after{
+    width: 50px;
+    border: 1px solid $purple;
+    margin: 0 auto;
+    margin-top: 5px;
+    display: block;
+    content: "";
+}
+
+.experience-picker__drawer {
+    display: flex;
+    flex-direction: column;
+
+    width: 150px;
+    min-height: 100%;
+
+    background-color: $purple;
+
+    border-radius: 0;
+}
+
+.experience-picker__drawer-item {
+    padding: 15px;
+    background-color: $purple;
+    border-radius: 0;
+    color: white;
+}
+
+.experience-picker__drawer-item.active {
+    background-color: $purple-dark;
+    font-weight: 700;
+}
+
+.experience-picker__display,
+.experience-picker__contact-display {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    right: 0;
+    bottom: 0;
+
+    padding: 20px;
+    overflow-y: scroll;
+
+}
+
+.experience-picker__contact-display {
+    left: 0;
+}
+
+.display__heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.display__clear-btn {
+    font-size: 12px;
+    color: $danger;
+}
+
+.display__title {
+    font-family: $heading-font;
+    font-size: 20px;
+    font-weight: 500;
+    color: $black;
+    margin-right: 10px;
+}
+
+.experience-picker__display .children {
+    margin-top: 10px;
+
+    .children {
+        border-left: 1px solid $black;
+        border-radius: 0;
+        margin-left: 5px;
+        margin-bottom: 30px;
+
+        padding: 1px 0;
+    }
+}
+
+.item-picker {
+    display: flex;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &__checkbox {
+        margin-right: 5px;
+    }
+
+    &__content {
+        font-size: 18px;
+    }
+}
+
+.content-picker {
+    display: flex;
+    margin: 15px 0;
+    margin-left: 25px;
+    cursor: pointer;
+
+    &__checkbox {
+        margin-right: 5px;
+    }
+}
+
+.experience-picker__heading {
+
+}
+
+.experience-picker__content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.experience-picker__wrapper {
+    width: 50%;
+}
+
+.resume-template__wrapper {
+    width: 50%;
+}
+
+.experience-picker__form {
+    padding: 0.75 * $box-padding;
+    padding-top: 0;
+
+    font-family: $body-font;
+}

@@ -1,0 +1,143 @@
+* {
+    font-family: serif;
+    --item-size: 16px;
+}
+
+$resume-font-size: 14px;
+
+.d-resume { // currently unused
+    font-family: serif;
+    display: block;
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+.d-resume-wrapper {
+    font-size: $resume-font-size;
+    box-sizing: border-box;
+    width: 95%;
+    padding: 20px 20px;
+    min-height: calc(40vw / 0.70719);
+    border: 1px solid black;
+
+    margin: 0.75 * $box-padding;
+    margin-top: 0;
+    border-radius: 0;
+}
+
+.d-name {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.d-contact__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.d-contact__block {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-contact__block:nth-child(1) {
+    align-items: flex-start;
+}
+
+.d-contact__block:nth-child(2) {
+    align-items: flex-end
+}
+
+.d-contact__item {
+    padding: 0;
+    margin: 0;
+}
+
+.d-section__container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.d-section__heading {
+    width: 100%;
+    text-align: left;
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+}
+
+.d-item__container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-item__header__container {
+    margin: 0;
+    margin-top: 2px;
+    font-size: $resume-font-size;
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-item__header__left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.d-item__header__right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.d-item__heading {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: $resume-font-size;
+    font-weight: bold;
+}
+
+.d-item__location {
+    margin: 0;
+    font-size: $resume-font-size;
+}
+
+.d-item__start-date {
+    margin: 0;
+    min-width: 40px;
+    font-size: $resume-font-size;
+}
+
+.d-item__end-date {
+    position: relative;
+    display: block;
+    margin: 0;
+    min-width: 40px;
+    font-size: $resume-font-size;
+}
+
+.d-item__subheading {
+    margin: 0;
+    font-style: italic;
+    font-size: $resume-font-size;
+}
+
+.d-content__container {
+    margin: 0;
+    padding-left: 0px;
+}
+
+.d-content {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    font-size: $resume-font-size;
+}

@@ -1,0 +1,82 @@
+@import "_reset.scss";
+
+* {
+    font-family: $body-font;
+}
+
+button,
+input[type="submit"] {
+    font-family: $heading-font;
+}
+
+.resume-item__wrapper {
+    max-width: 800px + 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: $box-margin 0;
+    border: 5px solid white;
+}
+.resume-item {
+    padding: $box-padding;
+    box-shadow: 0 1px 3px grey;
+    font-family: $body-font;
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.heading {
+    font-weight: 700;
+}
+
+.heading__container {
+    font-weight: 700;
+    color: $black;
+}
+
+.container {
+    margin-bottom: 3px;
+}
+
+.subheading {
+
+}
+
+.date__container {
+    position: absolute;
+    top: $box-padding;
+    right: $box-padding;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 0 $box-margin;
+    li {
+        margin-left: $space-margin * 1.5;
+        list-style-type: disc;
+    }
+}
+
+.resume-item__button-bar {
+    position: absolute;
+    top: 0.5 * $box-padding;
+    right: 0.5 * $box-padding;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remove-resume-item,
+.edit-resume-item {
+    width: 80px;
+    padding: $box-padding;
+    background-color: $purple-dark;
+    color: white;
+    cursor: pointer;
+}
+
+.resume-item__wrapper.selected .resume-item__button-bar {
+    display: flex;
+}

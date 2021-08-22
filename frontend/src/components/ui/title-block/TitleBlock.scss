@@ -1,0 +1,18 @@
+.title-block {
+    font-family: $heading-font;
+    padding: 0.75 * $box-padding;
+
+    display: flex;
+    align-items: center;
+
+    .button {
+        max-width: 300px;
+    }
+}
+
+.title-block__title {
+    font-family: $heading-font;
+    color: $black;
+    font-weight: 700;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,237 @@
+$form-width: 600px;
+
+.logo {
+    background-image: url('https://vz-static.s3.us-east-2.amazonaws.com/veazee-logo-v2.png');
+    background-position: left center;
+    background-repeat:no-repeat;
+    background-size: contain;
+
+    height: 80px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    &.logo--small {
+        max-width: 100px;
+        height: 35px;
+        padding-right: 100px;
+    }
+}
+
+.form--inline {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form--modal {
+    max-width: 800px;
+    margin: 0 auto;
+
+    background-color: white;
+    border-radius: 15px;
+}
+
+.form-container {
+    width: 95%;
+    max-width: $form-width;
+    margin: 4*$space-margin auto;
+
+}
+.form-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: $box-padding $box-padding;
+    box-sizing: border-box;
+    position: relative;
+
+    border: 3px solid $gray-1;
+    border-radius: $box-padding;
+    background-color: white;
+
+    font-family: $heading-font;
+    color: $black;
+    z-index: 2;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.form-group--equal {
+    &> .form-field {
+        width: 48%;
+    }
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 2*$space-margin;
+    position: relative;
+    &> .button {
+        max-width: 120px;
+    }
+    &> .text {
+        margin: auto 0;
+    }
+}
+
+.form-field--right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-field--center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    padding: $box-padding;
+    margin-bottom: 20 *$space-margin;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.label {
+    font-family: $heading-font;
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    padding: 15px 0 3px 0;
+}
+
+.text-input {
+    padding: 5px;
+    font-size: 1.25rem;
+    font-family: $body-font;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid $gray-4;
+    border-radius: 0;
+    color: $gray-dark;
+    width: 100%;
+
+    &::placeholder {
+        color: $gray-3;
+    }
+}
+
+.text-input__button-group {
+    .form-field {
+        margin-bottom: $space-margin;
+    }
+}
+
+.text-input--stacked {
+    margin-bottom: -2 * $space-margin;
+}
+
+.select-box {
+    padding: 5px;
+    margin-right: $box-padding;
+    font-size: 1.25rem;
+    font-weight :400;
+    font-family: $body-font;
+    box-sizing: border-box;
+    border-radius: 0;
+    color: $gray-dark;
+    border: 1px solid $gray-2;
+    margin-bottom: 2*$space-margin;
+
+    & > option {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+    }
+}
+
+.text {
+    font-family: $body-font;
+    margin-bottom: 2*$space-margin;
+    width: 100%;
+    line-height: 1.25rem;
+    min-width: 400px;
+}
+
+.inline-link {
+    font-weight: 700;
+    color: $purple;
+    &:visited {
+        color: $purple;
+    }
+}
+
+.button {
+    max-width: 120px;
+    border: none;
+    background-color: $purple;
+    padding: 0.5 * $box-padding;
+    color: white;
+    border-radius: 5px;
+
+    font-family: $heading-font;
+    font-weight: 700;
+    position: relative;
+
+    &:hover {
+        background-color: $purple-dark;
+        cursor: pointer;
+    }
+}
+
+.form-message {
+    border-left: 5px solid $orange;
+    background-color: $orange-light;
+    color: $orange-darkest;
+    display: flex;
+    align-items: center;
+    margin-bottom: $space-margin;
+}
+
+.form-message--danger {
+    border-color: $danger;
+    background-color: $danger-light;
+    color: $danger-darkest;
+}
+
+.form-message__text {
+    padding: $box-padding;
+    padding-left: 0;
+    font-family: $body-font;
+    font-weight: 500;
+}
+
+.form-message__icon {
+    padding: 15px;
+    text-align: center;
+}
+
+.form__error-container {
+    padding: 5px 0;
+}
+
+.form__error {
+    font-size: 0.75rem;
+    font-family: $body-font;
+    font-weight: 500;
+    color: $danger;
+}
+
+.empty {
+    font-family: $body-font;
+    font-size: 1rem;
+    padding: $box-padding 5px;
+}

@@ -1,0 +1,39 @@
+.form--modal {
+    margin-top: 5vh;
+}
+
+.form--modal__title-block {
+    //background-color: $gray-1;
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $black;
+
+    padding: 0.75 * $box-padding;
+
+    margin-bottom: $space-margin;
+    border-bottom: 1px solid $gray-2;
+    position: relative;
+}
+
+.form--modal__content {
+    overflow-y: scroll;
+    max-height: 60vh;
+    padding: 0.75 * $box-padding;
+    font-family: $body-font;
+}
+
+.form--modal__button-bar {
+    border-top: 1px solid $gray-2;
+    display: flex;
+    padding: 0.75 * $box-padding;
+}
+
+.form--modal__cancel {
+    color: $gray-3;
+
+    position: absolute;
+    right: 0.75 * $box-padding;
+    top: 0.75 * $box-padding;
+    cursor: pointer;
+}

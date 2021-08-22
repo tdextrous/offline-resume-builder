@@ -1,0 +1,22 @@
+.page {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+
+    font-family: $body-font;
+}
+
+.page__content {
+    padding: 0.75 * $box-padding;
+}
+
+.list-item {
+    padding-top: 0.5 * $box-padding;
+
+    & > span:first-child {
+        font-family: $heading-font;
+        font-weight: 500;
+    }
+}

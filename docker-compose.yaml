@@ -6,3 +6,8 @@ services:
       context: ./frontend
     ports:
       - 1337:8080
+  resume-service:
+    build:
+      context: ./resume-service
+    ports:
+      - 5000:80

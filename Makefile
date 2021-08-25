@@ -1,7 +1,13 @@
-.PHONY: frontend resume-service
+.PHONY: all clean frontend resume-service
+
+all: 
+	docker-compose up -d 
 
 frontend:
 	docker-compose up -d frontend
 
 resume-service:
 	docker-compose up -d resume-service
+
+clean:
+	docker-compose down

@@ -33,6 +33,10 @@ export type SelectContentResumeAction = Action<
   typeof types.RESUME_SELECT_CONTENT,
   { resumeId: string, contentId: string }>;
 
+export type DownloadPdfAction = Action<
+  typeof types.RESUME_DOWNLOAD_PDF,
+  { resumeId: string }>;
+
 
 
 export type ResumeActionTypes = AddResumeAction
@@ -41,7 +45,8 @@ export type ResumeActionTypes = AddResumeAction
   | SelectContactResumeAction
   | SelectSectionResumeAction
   | SelectItemResumeAction
-  | SelectContentResumeAction;
+  | SelectContentResumeAction
+  | DownloadPdfAction;
 
 export type ResumeByIdState = Record<string, Readonly<Resume>>;
 export type ResumeAllIdsState = string[];

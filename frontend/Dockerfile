@@ -4,8 +4,12 @@ WORKDIR /app
 
 # Take advantage of caching for big node_modules/ install.
 COPY package.json /app
-COPY package-lock.json /app
+#COPY package-lock.json /app
 RUN npm i
+
+# Set environment variables for build
+ARG API_BASE_URL
+ENV API_BASE_URL=${API_BASE_URL}
 
 # Do build
 COPY . /app

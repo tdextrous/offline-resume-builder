@@ -1,3 +1,8 @@
+// Import dotenv for .env variable loading
+//import dotenv from 'dotenv';
+//dotenv.config();
+
+// Rest of app
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';

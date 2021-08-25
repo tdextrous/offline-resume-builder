@@ -1,42 +1,27 @@
-import React from 'react';
-import { connect, ConnectedProps } from 'react-redux';
+import { convertDateToString } from '../../utils';
 import type { RootState } from '../../redux/store';
-import { getResumeStateTree } from '../../redux/resume';
 
-import SectionPreview from './SectionPreview';
-
-import './BasicTemplate.scss';
-
-
-// Useful types.
 import { ExperienceSection, ExperienceItem, ExperienceContent } from '../../entity';
 type ExperienceItemSelection = Readonly<ExperienceItem> & { selectedContent?: Readonly<ExperienceContent>[] };
 type ExperienceSectionSelection = Readonly<ExperienceSection> & { selectedItems?: ExperienceItemSelection[] };
 
-interface OwnProps {
-  resumeId: string;
-}
-
-const mapState = (state: RootState, props: OwnProps) => {
-  // TODO: Get this from selector
-  /**
+export const getResumeStateTree = (state: RootState, props: { resumeId: string }) => {
+  const { resumeId } = props;
   const {
-    user: userState,
+    user,
     resume,
     experienceSection,
     experienceItem,
     experienceContent,
-    contactItem,
+    contactItem
   } = state.entity;
-  const user = userState.byId['1'];
-  const { resumeId } = props;
 
   const selectedResume = resume.byId[resumeId];
   const selectedExperienceSections = selectedResume.sections;
   const selectedExperienceItems = selectedResume.items;
   const selectedExperienceContent = selectedResume.content;
   const selectedContactItems = selectedResume.contactItems;
-  const name = `${user.firstName} ${user.lastName}`;
+  const name = `${user.byId['1'].firstName} ${user.byId['1'].lastName}`
 
   // Get array of entries for sections, items, and content
 
@@ -109,49 +94,4 @@ const mapState = (state: RootState, props: OwnProps) => {
     leftContactEntries,
     rightContactEntries,
   }
-  */
-  return getResumeStateTree(state, props);
 }
-
-const mapDispatch = { };
-const connector = connect(mapState, mapDispatch);
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-type Props = OwnProps & PropsFromRedux;
-
-const ResumePreview: React.FC<Props> = ({
-  resumeId,
-  name,
-  sections,
-  leftContactEntries,
-  rightContactEntries
-}) => {
-
-  return (
-    <div className="d-resume-wrapper">
-      <p className="d-name">{name}</p>
-      <div className="d-contact__container">
-        <div className="d-contact__block">
-          {leftContactEntries.map(obj => (
-            <p key={obj.id} className="d-contact__item">{obj.content}</p>
-          ))}
-        </div>
-        <div className="d-contact__block">
-          {rightContactEntries.map(obj => (
-            <p key={obj.id} className="d-contact__item">{obj.content}</p>
-          ))}
-        </div>
-      </div>
-      {sections.map(section => (
-        <SectionPreview
-          key={section.id}
-          id={section.id}
-          title={section.title}
-          items={section.selectedItems}
-        />
-      ))}
-    </div>
-  );
-}
-
-export default connector(ResumePreview);

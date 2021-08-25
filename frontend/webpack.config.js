@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 
-module.exports = {
-  mode: 'development',
+var config = {
+  //mode: 'development',
   entry: './index.tsx',
   module: {
     rules: [
@@ -49,8 +50,26 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
+    new Dotenv({
+      systemvars: true
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve('./public/index.html'),
     }), 
   ],
+}
+
+module.exports = (env, argv) => {
+  console.log('env:', env);
+  console.log('proc.env:', process.env);
+  // Edit config object depending on env mode.
+  if (argv.mode === 'development') { 
+  }
+
+  if (argv.mode === 'production') { 
+    console.log('prod lol');
+    config.output.path = path.resolve(__dirname, 'build/');
+  }
+
+  return config;
 }

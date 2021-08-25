@@ -1,16 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { downloadResumePdf } from '../../redux/resume';
 
 import { TitleBlock, Button } from '../ui';
 
-interface Props {
+
+interface OwnProps {
+  id: string;
   title: string;
   onEdit: () => void;
 }
 
+const mapState = () => ({});
+const mapDispatch = {
+  downloadResumePdf
+}
+const connector = connect(mapState, mapDispatch);
+
+type StateProps = ReturnType<typeof mapState>;
+type DispatchProps = typeof mapDispatch;
+type Props = OwnProps & StateProps & DispatchProps;
+
 const ResumeTitleCardDisplay: React.FC<Props> = ({
+  id,
   title,
-  onEdit
+  onEdit,
+  downloadResumePdf,
 }) => {
+  const handleDownload = () => {
+    console.log('handleDownload Clicked');
+    downloadResumePdf(id);
+  }
 
   return (
     <TitleBlock text={title}>
@@ -19,8 +39,13 @@ const ResumeTitleCardDisplay: React.FC<Props> = ({
         onClick={onEdit}
         info
       />
+      <Button
+        text="Download Resume"
+        onClick={handleDownload}
+        light
+      />
     </TitleBlock>
   );
 }
 
-export default ResumeTitleCardDisplay;
+export default connector(ResumeTitleCardDisplay);

@@ -83,3 +83,15 @@ export const selectExperienceContent = (
     }
   }
 }
+
+export const downloadResumePdf = (
+  resumeId: string
+): types.DownloadPdfAction => {
+  console.log('downloadResumePdf action creator called');
+  return {
+    type: actionTypes.RESUME_DOWNLOAD_PDF,
+    payload: {
+      resumeId
+    }
+  }
+}

@@ -27,10 +27,4 @@ COPY ./deploy/nginx.conf /etc/nginx
 COPY ./deploy/uwsgi.ini /etc/uwsgi
 COPY ./deploy/supervisord.conf /etc
 
-EXPOSE 5000
-
-# Prod Thing
 CMD ["/usr/bin/supervisord"]  
-#CMD ["nginx", "-g", "daemon off;"]  # Only run nginx
-#CMD ["uwsgi", "--ini", "/etc/uwsgi"] # Only run uwsgi
-#CMD ["python3", "main.py"]  # Directly run flask.

@@ -11,16 +11,8 @@ app = Flask(__name__)
 CORS(app, origins=['http://localhost:1337'])
 app.config.from_object(DevConfig)
 
-@app.route('/')
-def home():
-    #filename = "ThomasDexter202101.pdf"
-
-    return jsonify({'hello': 'world'})
-    #return send_file(filename)
-
 
 @app.route('/resume/pdf', methods=['POST'])
-#@cross_origin(origin="localhost", allow_headers=['Content-Type'])
 def make_resume():
     """
     This route accepts a JSON body payload containing resume data.
@@ -58,9 +50,6 @@ def make_resume():
 
     # Send back the generated PDF
     return send_file(resume_path)
-    #response = send_file(resume_path)
-    #response.headers.add('Access-Control-Allow-Origin', '*')
-    #return response
 
 
 if __name__ == '__main__':

@@ -5,7 +5,6 @@ const Dotenv = require('dotenv-webpack');
 
 
 var config = {
-  //mode: 'development',
   entry: './index.tsx',
   module: {
     rules: [
@@ -60,14 +59,11 @@ var config = {
 }
 
 module.exports = (env, argv) => {
-  console.log('env:', env);
-  console.log('proc.env:', process.env);
   // Edit config object depending on env mode.
   if (argv.mode === 'development') { 
   }
 
   if (argv.mode === 'production') { 
-    console.log('prod lol');
     config.output.path = path.resolve(__dirname, 'build/');
   }
 

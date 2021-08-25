@@ -1,6 +1,6 @@
 import { call, takeLeading, select } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-import { getResumeStateTree } from './resume.selectors';
+import { getResumeStateTree, getResumeTitle } from './resume.selectors';
 import type { DownloadPdfAction } from './resume.types';
 import * as types from './resume.actionTypes';
 
@@ -24,8 +24,9 @@ function* makeResumePdf(action: DownloadPdfAction): SagaIterator {
   const resumeId = action.payload.resumeId;
   const resumeStateTree = yield select(getResumeStateTree, { resumeId });
   const resumeBlob = yield call(getResumePDFBlob, resumeStateTree);
-  const resumeName = 'TEST RESUME' + '.pdf'
-  download(resumeBlob, resumeName)
+  const resumeTitle = yield select(getResumeTitle, { resumeId });
+  const resumeDownloadFilename = `${resumeTitle}.pdf`
+  download(resumeBlob, resumeDownloadFilename)
 }
 
 function* resumeSaga(): SagaIterator {

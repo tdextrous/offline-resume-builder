@@ -5,6 +5,13 @@ import { ExperienceSection, ExperienceItem, ExperienceContent } from '../../enti
 type ExperienceItemSelection = Readonly<ExperienceItem> & { selectedContent?: Readonly<ExperienceContent>[] };
 type ExperienceSectionSelection = Readonly<ExperienceSection> & { selectedItems?: ExperienceItemSelection[] };
 
+export const getResumeTitle = (state: RootState, props: { resumeId: string }) => {
+  const { resumeId } = props;
+  const resume = state.entity.resume.byId[resumeId];
+  const resumeTitle = resume.title;
+  return resumeTitle;
+}
+
 export const getResumeStateTree = (state: RootState, props: { resumeId: string }) => {
   const { resumeId } = props;
   const {

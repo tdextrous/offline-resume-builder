@@ -1,0 +1,149 @@
+@page {
+    margin: 35px;
+}
+
+* {
+    font-family: "Noto Serif";
+}
+
+body, html {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.resume {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.resume-wrapper {
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.name {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.contact__container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact__block {
+    display: inline-block;
+    min-width: 49%;
+    padding: 0;
+    margin: 0;
+}
+
+.contact__block:nth-child(1) {
+    left: 0;
+}
+
+.contact__block:nth-child(2) {
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+.contact__item {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+.section__container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.section__heading {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.item__container {
+    margin: 0;
+}
+
+.item__header__container {
+    margin: 0;
+    margin-top: 2px;
+    font-size: 14px;
+    position: relative;
+}
+
+.item__header__left {
+    display: inline-block;
+    min-width: 500px;
+}
+
+.item__header__right {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    text-align: right;
+}
+
+.item__heading {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    width: auto;
+}
+
+.item__location {
+    display: inline-block;
+    margin: 0;
+    margin-left: -3.5px;
+    font-size: 14px;
+}
+
+.item__start-date {
+    margin: 0;
+    font-size: 14px;
+    min-width: 70px;
+    text-align: left;
+}
+
+.item__end-date {
+    margin: 0;
+    font-size: 14px;
+    min-width: 70px;
+    text-align: right;
+}
+
+.item__subheading {
+    margin: 0;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.content__container {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.content {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    font-size: 14px;
+}

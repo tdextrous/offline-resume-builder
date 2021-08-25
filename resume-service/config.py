@@ -6,3 +6,4 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     DEBUG = True
+    CORS_HEADERS = 'Content-Type'

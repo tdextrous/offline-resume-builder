@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic Resume Template</title>
+        <link rel="stylesheet" href="./basic.css">
+    </head>
+    <body>
+        <div class="resume">
+            <div class="resume-wrapper">
+                <h1 class="name">{{ name }}</h1>
+
+                <div class="contact__container">
+                    <div class="contact__block">
+                        {% for item in leftContactEntries %}
+                            <p class="contact__item">{{ item.content }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="contact__block">
+                        {% for item in rightContactEntries %}
+                            <p class="contact__item">{{ item.content }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% for section in sections %}
+                <div class="section__container">
+                    <h2 class="section__heading">
+                        {{ section.title }}
+                    </h2>
+
+                    {% for item in section.selectedItems %}
+                    <div class="item__container">
+                        {% if item.heading != "" or item.location != "" or item.startDate is not none or item.endDate is not none %}
+                        <div class="item__header__container">
+                            <div class="item__header__left">
+                                {% if item.heading != "" %}
+                                <h3 class="item__heading">
+                                    {{ item.heading }}
+                                </h3>
+                                {% endif %}
+
+                                {% if item.location != "" %}
+                                <span class="item__location">
+                                    , {{ item.location }}
+                                </span>
+                                {% endif %}
+                            </div>
+
+
+                            <div class="item__header__right">
+                                {% if item.startDate is not none %}
+                                <span class="item__start-date">
+                                    {{ item.startDate }}
+                                </span>
+                                &ndash;
+                                {% endif %}
+
+                                {% if item.endDate is not none %}
+                                <span class="item__end-date">
+                                    {{ item.endDate }}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if item.subheading != "" %}
+                        <p class="item__subheading">
+                            {{ item.subheading }}
+                        </p>
+                        {% endif %}
+
+                        {% if item.selectedContent != [] %}
+                        <ul class="content__container">
+                            {% for content in item.selectedContent %}
+                            <li class="content">
+                                {{ content.content }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

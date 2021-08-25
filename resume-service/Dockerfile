@@ -2,6 +2,13 @@ FROM python:3.8-alpine
 WORKDIR /app
 
 RUN apk add --update nginx supervisor build-base gcc linux-headers
+
+# Weasyprint dependencies
+RUN apk add py3-pip py3-pillow py3-cffi py3-brotli gcc musl-dev python3-dev pango libffi-dev zlib-dev jpeg-dev fontconfig
+
+# Install fonts
+RUN apk add font-noto
+
 RUN pip3 install uwsgi
 
 COPY ./requirements.txt /app/requirements.txt
@@ -13,14 +20,17 @@ RUN set -x ; \
   adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
 
 # Copy code.
-#COPY --chown=uwsgi:uwsgi . /app
 COPY . /app
 
 # Copy deployment files
-COPY ./nginx.conf /etc/nginx
-COPY ./uwsgi.ini /etc/uwsgi
-COPY ./supervisord.conf /etc
+COPY ./deploy/nginx.conf /etc/nginx
+COPY ./deploy/uwsgi.ini /etc/uwsgi
+COPY ./deploy/supervisord.conf /etc
 
-CMD ["/usr/bin/supervisord"]
-#CMD ["nginx", "-g", "daemon off;"]
-#CMD ["uwsgi", "--ini", "uwsgi.ini"]
+EXPOSE 5000
+
+# Prod Thing
+CMD ["/usr/bin/supervisord"]  
+#CMD ["nginx", "-g", "daemon off;"]  # Only run nginx
+#CMD ["uwsgi", "--ini", "/etc/uwsgi"] # Only run uwsgi
+#CMD ["python3", "main.py"]  # Directly run flask.

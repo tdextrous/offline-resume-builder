@@ -13,5 +13,4 @@ services:
     build:
       context: ./resume-service
     ports:
-      - 5000:80
-      #- $RESUME_SERVICE_PORT:5000
+      - $RESUME_SERVICE_PORT:80

@@ -23,8 +23,8 @@ const ItemPreview: React.FC<Props> = ({
   endDate,
   content=[]
 }) => {
-  const startDateString = convertDateToString(startDate);
-  const endDateString = convertDateToString(endDate);
+  const startDateString = startDate; //convertDateToString(startDate);
+    const endDateString = endDate;//convertDateToString(endDate);
 
   return (
     <div className="d-item__container">

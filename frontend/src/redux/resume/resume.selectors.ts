@@ -43,6 +43,12 @@ export const getResumeStateTree = (state: RootState, props: { resumeId: string }
   const selectedItemEntries: ExperienceItemSelection[] = [];
   for (let itemId of selectedExperienceItems) {
     const currItem = { ...experienceItem.byId[itemId] };
+    if (currItem.startDate !== null) {
+        currItem.startDate = convertDateToString(currItem.startDate);
+    }
+    if (currItem.endDate !== null) {
+        currItem.endDate = convertDateToString(currItem.endDate);
+    }
     selectedItemEntries.push(currItem);
   }
 
@@ -73,6 +79,10 @@ export const getResumeStateTree = (state: RootState, props: { resumeId: string }
   // This will create a monster mega tree.
   for (let i = 0; i < selectedContentEntries.length; i++) {
     for (let j = 0; j < selectedItemEntries.length; j++) {
+      // Convert startDate/endDate into display format.
+
+
+      // Assign content entries to selected items.
       if (selectedContentEntries[i].itemId === selectedItemEntries[j].id) {
         if (!selectedItemEntries[j].hasOwnProperty('selectedContent')) {
           selectedItemEntries[j].selectedContent = [];

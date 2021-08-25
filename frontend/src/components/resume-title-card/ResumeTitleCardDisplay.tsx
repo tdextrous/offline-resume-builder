@@ -28,7 +28,6 @@ const ResumeTitleCardDisplay: React.FC<Props> = ({
   downloadResumePdf,
 }) => {
   const handleDownload = () => {
-    console.log('handleDownload Clicked');
     downloadResumePdf(id);
   }
 

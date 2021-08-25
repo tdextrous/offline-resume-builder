@@ -21,7 +21,6 @@ const getResumePDFBlob = async (resumeData: ReturnType<typeof getResumeStateTree
 }
 
 function* makeResumePdf(action: DownloadPdfAction): SagaIterator {
-  console.log('makeResumePdf saga called');
   const resumeId = action.payload.resumeId;
   const resumeStateTree = yield select(getResumeStateTree, { resumeId });
   const resumeBlob = yield call(getResumePDFBlob, resumeStateTree);

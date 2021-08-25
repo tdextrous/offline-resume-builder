@@ -19,22 +19,18 @@ export const App: React.FC<Props> = () => {
       <Navbar />
       <main className="page-wrapper">
         <Switch>
-          {/* <ExperiencePage /> (was <Resume/>) */}
           <Route path="/experience" render={() => (
             <ExperiencePage />
           )}/>
           
-          {/* <ResumeDetailPage /> (was <ExperiencePicker/>) */}
           <Route path="/resumes/:id" render={({ match }) => (
             <ResumeDetailPage resumeId={match.params.id} />
           )}/>
 
-          {/* <ResumeListPage /> (was <ResumeList/>) */}
           <Route path="/resumes" render={() => (
             <ResumeListPage />
           )}/>
 
-          {/* <ProfilePage /> (was <ProfilePage/>) */}
           <Route path="/profile" render={() => (
             <ProfilePage />
           )}/>

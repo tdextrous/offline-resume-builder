@@ -17,7 +17,7 @@ export default function configureStore(preloadedState = {}) {
 
   const store = createStore(persistedReducer, preloadedState, composedEnhancers);
 
-  // I guess you have to run the saga middleware AFTER the store is created??
+  // Important: run saga middleware after store is created.
   sagaMiddleware.run(rootSaga);
 
   return store

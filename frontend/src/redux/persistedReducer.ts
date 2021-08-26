@@ -1,9 +1,8 @@
 import { persistReducer, createTransform } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import rootReducer from './rootReducer';
+import entityReducer from './entityReducer';
 
 import { types } from './experience-item';
-
 
 
 const DateTransform = createTransform(
@@ -39,7 +38,7 @@ const DateTransform = createTransform(
       console.log('transform err:', e.toString());
     }
   },
-  { whitelist: ['experienceItems'] }
+  { whitelist: ['experienceItem'] }
 );
 
 const persistConfig = {
@@ -48,4 +47,4 @@ const persistConfig = {
   transforms: [DateTransform]
 }
 
-export default persistReducer(persistConfig, rootReducer);
+export default persistReducer(persistConfig, entityReducer);

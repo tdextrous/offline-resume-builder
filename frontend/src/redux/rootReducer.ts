@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 // Import other reducers
-import entityReducer from './entityReducer';
+import persistedReducer from './persistedReducer';
 
 const rootReducer = combineReducers({
-  entity: entityReducer
+  entity: persistedReducer
 });
 
 export default rootReducer;
